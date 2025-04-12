@@ -1,38 +1,37 @@
-class Vehiculo:
-    def __init__(self, velocidad):
-        self.velocidad = velocidad
-
-    def acelerar(self):
-        self.velocidad += 10
-        print(f"Vehículo aceleró. Velocidad: {self.velocidad} km/h")
-
-    def frenar(self):
-        self.velocidad = max(0, self.velocidad - 5)
-        print(f"Vehículo frenó. Velocidad: {self.velocidad} km/h")
-
-class Coche(Vehiculo):
-    def __init__(self, velocidad, marca, modelo, anio):
-        super().__init__(velocidad)
+# Clase Coche (Ejercicio 3)
+class Coche3:
+    def __init__(self, marca, modelo, anio):
         self.marca = marca
         self.modelo = modelo
         self.anio = anio
 
     def describir(self):
-        print(f"Coche: {self.marca} {self.modelo}, Año: {self.anio}, Velocidad: {self.velocidad} km/h")
+        print(f"Coche: {self.marca} {self.modelo}, Año: {self.anio}")
+
+# Clase Vehiculo (Ejercicio 4)
+class Vehiculo:
+    def __init__(self):
+        self.velocidad = 0
 
     def acelerar(self):
-        self.velocidad += 20
-        print(f"Coche aceleró. Velocidad: {self.velocidad} km/h")
+        self.velocidad += 10
+        print(f"Velocidad actual: {self.velocidad} km/h")
 
+# Clase Coche que hereda de Vehiculo
+class Coche4(Vehiculo):
+    def __init__(self, marca, modelo):
+        super().__init__()
+        self.marca = marca
+        self.modelo = modelo
+
+    def describir(self):
+        print(f"Coche: {self.marca} {self.modelo}, Velocidad: {self.velocidad} km/h")
+
+# Clase Bicicleta que hereda de Vehiculo
 class Bicicleta(Vehiculo):
-    def __init__(self, velocidad, tipo):
-        super().__init__(velocidad)
+    def __init__(self, tipo):
+        super().__init__()
         self.tipo = tipo
 
     def describir(self):
         print(f"Bicicleta tipo {self.tipo}, Velocidad: {self.velocidad} km/h")
-
-    def acelerar(self):
-        self.velocidad += 5
-        print(f"Bicicleta aceleró. Velocidad: {self.velocidad} km/h")
-
